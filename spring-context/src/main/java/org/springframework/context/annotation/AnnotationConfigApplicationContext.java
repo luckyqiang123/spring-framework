@@ -62,7 +62,19 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * through {@link #register} calls and then manually {@linkplain #refresh refreshed}.
 	 */
 	public AnnotationConfigApplicationContext() {
+		/**
+		 * 父类的构造方法
+		 * 创建一个读取注解的Bean定义读取器
+		 * 什么是bean定义？BeanDefinition
+		 */
 		this.reader = new AnnotatedBeanDefinitionReader(this);
+
+		/**
+		 * 可以用来扫描包或者类，继而转换成bd
+		 * 但是实际上我们扫描包工作不是scanner这个对象来完成的
+		 * 是spring自己new的一个ClassPathBeanDefinitionScanner
+		 * 这里的scanner只是为了程序员能在外部调用AnnotationConfigApplicationContext
+		 */
 		this.scanner = new ClassPathBeanDefinitionScanner(this);
 	}
 
@@ -83,8 +95,14 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * e.g. {@link Configuration @Configuration} classes
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... annotatedClasses) {
+		//先调用父类构造方法，后调用自己的构造方法
+		//在自己构造方法中初始一个读取器和扫描器
 		this();
+		//spring自己的bean，扫描放进放到spring容器
+		//将配置类AppConfig放到map，ac.register(AppConfig.classs)
+		//this.beanDefinitionMap.put(beanName, beanDefinition);
 		register(annotatedClasses);
+		//扫描放进map
 		refresh();
 	}
 

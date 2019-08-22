@@ -40,6 +40,21 @@ import org.springframework.lang.Nullable;
  * @see ConfigurableBeanFactory#addBeanPostProcessor
  * @see BeanFactoryPostProcessor
  */
+
+
+/**
+ * 1、第一次调用的后置处理器：InstantiationAwareBeanPostProcessor
+ * 2、第二次调用的后置处理器：SmartInstantiationAwareBeanPostProcessor
+ * 3、第三次调用的后置处理器：MergedBeanDefinitionPostProcessor
+ * 4、第四次调用的后置处理器：SmartInstantiationAwareBeanPostProcessor
+ * 5、第五次调用的后置处理器：InstantiationAwareBeanPostProcessor
+ * 6、第六次调用的后置处理器：InstantiationAwareBeanPostProcessor
+ * 7、第七次调用的后置处理器：
+ * 8、第八次调用的后置处理器：
+ * 9、第九次调用的后置处理器：
+ */
+
+
 public interface BeanPostProcessor {
 
 	/**
