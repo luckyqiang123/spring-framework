@@ -1,5 +1,6 @@
 package cn.luckyqiang.servlet;
 
+import cn.luckyqiang.annotation.Logger;
 import cn.luckyqiang.service.CityService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;

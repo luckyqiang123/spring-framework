@@ -1,5 +1,6 @@
 package cn.luckyqiang.service;
 
+import cn.luckyqiang.annotation.Logger;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,6 +17,7 @@ public class CityService {
 		System.out.println("cityservice construct");
 	}
 
+	@Logger
 	public void queryAll() {
 		System.out.println("query------cityservice------------------");
 	}

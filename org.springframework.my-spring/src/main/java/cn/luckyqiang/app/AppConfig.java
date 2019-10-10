@@ -1,10 +1,8 @@
 package cn.luckyqiang.app;
 
-import cn.luckyqiang.service.CityService;
-import cn.luckyqiang.servlet.Example1;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @author: luckyqiang
@@ -15,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 
 @ComponentScan("cn.luckyqiang.*")
 @Configuration
+@EnableAspectJAutoProxy
 public class AppConfig {
 
 //	@Bean

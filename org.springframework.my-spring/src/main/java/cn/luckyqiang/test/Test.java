@@ -1,5 +1,6 @@
 package cn.luckyqiang.test;
 
+import cn.luckyqiang.annotation.Logger;
 import cn.luckyqiang.app.AppConfig;
 import cn.luckyqiang.service.CityService;
 import cn.luckyqiang.servlet.Example1;
@@ -21,8 +22,8 @@ public class Test {
 		 * doGetBean------------- Object sharedInstance = getSingleton(beanName);
 		 */
 
-		ac.getBean(CityService.class);
-
+		CityService cityService = ac.getBean(CityService.class);
+		cityService.queryAll();
 		GenericBeanDefinition genericBeanDefinition = new GenericBeanDefinition();
 
 		System.out.println(ac.getBean(Example1.class));
